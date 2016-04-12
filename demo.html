@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<div id="box">11111</div>
+<button id="btn">test</button>
+<div id="test">12421421</div>
+<script src="em.js"></script>
+<script>
+var box=document.getElementById('box'),
+	btn=document.getElementById('btn'),
+	test=document.getElementById('test');
+function handle(){
+	alert('1111')
+}
+function handle2(){
+	alert('222')
+}
+em.add(box,'click',[handle,handle2])
+em.add(box,'mouseover',handle)
+em.add(btn,'mouseover',handle2)	
+em.add(test,'click',[handle,handle2])
+//em.remove(box,'click')
+var ex=em.getEvents(box)
+console.log(ex)
+//em.fire(box,'click')	
+console.log(em.events)
+</script>	
+</body>
+</html>
